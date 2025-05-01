@@ -3,19 +3,76 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --primary-color: #4e54c8;
+  --primary-color-dark: #3a3f8e;
+  --secondary-color: #8f94fb;
+  --text-color: #333;
+  --text-color-light: #777;
+  --light-color: #f4f7fc;
+  --dark-color: #20232a;
+  --border-color: #ddd;
+  --box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-color);
+  background: var(--light-color);
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+@layer base {
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-block py-3 px-6 rounded-full font-medium transition duration-300 cursor-pointer text-center;
+  }
+  
+  .btn-primary {
+    @apply bg-[#4e54c8] text-white;
+  }
+  
+  .btn-primary:hover {
+    @apply bg-[#3a3f8e] text-white;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-[#4e54c8] text-[#4e54c8] bg-transparent;
+  }
+  
+  .btn-outline:hover {
+    @apply bg-[#4e54c8] text-white;
+  }
+}
+
+/* Animations for skill bars and other elements */
+@keyframes progressAnimation {
+  to { transform: scaleX(1); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 50px 0;
+  }
 }
