@@ -118,6 +118,7 @@ const AccessibleComponentsPage = () => {
       <main className="max-w-6xl mx-auto px-4 py-8 space-y-12">
         {/* Analysis Tables Section */}
         <section id="overview" className="mb-8 pt-6">
+          <h2 className="text-2xl font-semibold text-[#4e54c8] mb-4 font-poppins">Project Overview</h2>
           <div className="bg-white rounded-lg shadow-lg p-6">
             <div className="max-w-4xl mx-auto space-y-8">
               <p className="text-gray-800 text-lg font-poppins">
